@@ -1,17 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
-import avatar from './assets/favicon.png';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>这是个简单的app</h1>
-        <img src={avatar} alt="avatar" />
-      </div>
-    );
-  }
+import Dashboard from './layouts/Dashboard';
+import NotFound from './pages/NotFound';
+
+function App() {
+  return (
+    <div>
+      <Switch>
+        <Route path="/main" component={Dashboard} />
+        <Redirect from="/" exact to="/main/home" />
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  );
 }
 
-// 使用hot函数装饰App组件
 export default hot(App);
