@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import avatar from "./assets/ssln.jpg";
+import React, { Component } from 'react';
+import { hot } from 'react-hot-loader/root';
+import avatar from './assets/favicon.png';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div>
@@ -11,3 +12,6 @@ export default class App extends Component {
     );
   }
 }
+
+// 使用hot函数装饰App组件
+export default hot(App);
